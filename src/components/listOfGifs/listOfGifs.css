@@ -2,6 +2,20 @@
   width: 90%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.wrapperLogoSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 15px;
+  height: 60px;
+  width: auto;
 }
 
 .listOfGifs {

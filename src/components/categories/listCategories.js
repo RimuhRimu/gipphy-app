@@ -1,7 +1,7 @@
 import {Link} from 'wouter'
 import useCategories from "hooks/useCategories";
 
-const ListCategories = ({}) => {
+const ListCategories = () => {
   const { categories } = useCategories()
   return (
     <>

@@ -6,11 +6,11 @@ import { useCallback, useEffect, useRef } from "react"
 const VisorPagination = ({setPage}) => {
   const visorRef = useRef()
   const { isNearScreen: isIntersecting } = useNearScreen({distance: "1000px", externalRef: visorRef, once: false})
-  const hadlerDebounce = useCallback(debounce(() => setPage(lastpage => lastpage+1),1000))
+  const handlerDebounce = useCallback(debounce(() => setPage(lastpage => lastpage+1),1000),[])
 
   useEffect(() => {
-    hadlerDebounce()
-  },[isIntersecting])
+    handlerDebounce()
+  },[isIntersecting,handlerDebounce])
   
   return (
     <>

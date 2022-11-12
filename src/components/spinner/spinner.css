@@ -1,0 +1,9 @@
+.spinner {
+  animation: spinner cubic-bezier(.455,.03,.515,.955) .75s infinite alternate;
+}
+
+@keyframes spinner {
+  100% {
+    transform:scale(1.75) translateY(-20px)
+  }
+}

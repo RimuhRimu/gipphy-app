@@ -1,5 +1,5 @@
 import './App.css';
-import {Route,Redirect, useLocation} from 'wouter'
+import {Route} from 'wouter'
 import ListOfGifs from 'components/listOfGifs/listOfGifs.js'
 
 export default function App() {

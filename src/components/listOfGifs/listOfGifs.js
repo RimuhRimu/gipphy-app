@@ -5,6 +5,8 @@ import Search from 'components/search/search.js'
 import VisorPagination from 'components/visorPagination/index'
 import Spinner from 'components/spinner/spinner'
 import "./listOfGifs.css"
+import 'components/spinner/spinner.css'
+import { Link } from 'wouter'
 // import debounce from 'just-debounce-it'
 // import { useCallback, useEffect } from 'react'
 
@@ -17,7 +19,12 @@ const ListOfgifs = ({params}) => {
       loadingGifs ? <Spinner></Spinner> :
     <>
       <header className="App-header">
-        <Search></Search>
+        <div className='wrapperLogoSearch'>
+          <Link href='/'>
+            <a><img src={process.env.PUBLIC_URL+'logo.png'} srcSet="https://raw.githubusercontent.com/RimuhRimu/gipphy-app/main/public/logo.png" alt="giphy-app logo" className='logo'/></a>
+          </Link>
+          <Search></Search>
+        </div>
         <Categories></Categories>
       </header>
         <div className="wrapper">
