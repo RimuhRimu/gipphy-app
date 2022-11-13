@@ -19,6 +19,7 @@ const ListOfgifs = ({params}) => {
       loadingGifs ? <Spinner></Spinner> :
     <>
       <header className="App-header">
+        <h1>Gipphy App</h1>
         <div className='wrapperLogoSearch'>
           <Link href='/'>
             <a><img src={process.env.PUBLIC_URL+'logo.png'} srcSet="https://raw.githubusercontent.com/RimuhRimu/gipphy-app/main/public/logo.png" alt="giphy-app logo" className='logo'/></a>

@@ -6,7 +6,6 @@ const useNearScreen = ({distance = '200px', externalRef = null, once = true}) =>
 
   useEffect(() => {
     const elem = externalRef ? externalRef.current : fromRef.current
-    console.log(elem)
     const onChange = (entries, observer) => {
       const [ categorieTarget ] = entries
       if (categorieTarget.isIntersecting) {
@@ -15,10 +14,12 @@ const useNearScreen = ({distance = '200px', externalRef = null, once = true}) =>
       }
       else !once && setShow(false)
     }
-    const observer = new IntersectionObserver(onChange, {
-      rootMargin: distance
-    })
-    observer.observe(elem)
+    if (typeof IntersectionObserver !== "undefined") {
+      const observer = new IntersectionObserver(onChange, {
+        rootMargin: distance
+      })
+      observer.observe(elem)
+    }
   })
   
   return externalRef ? {isNearScreen} : {isNearScreen,fromRef}
