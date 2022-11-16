@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 const useSEO = ({ title, description }) => {
   const [prevDescription, setDescription] = useState(description);
-  console.log(title);
   useEffect(() => {
     if (title) {
       document.title = decodeURI(title);
