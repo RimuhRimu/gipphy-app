@@ -39,14 +39,14 @@
   grid-row: span 2;
 }
 
-.gifBox:nth-child(8n+1) {
-	grid-column-end: span 2;
-	grid-row-end: span 2;
+.gifBox:nth-child(8n + 1) {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
 }
 
 .gifBox:nth-child(10n + 3) {
-	grid-column: span 2;
-	grid-row: span 1;
+  grid-column: span 2;
+  grid-row: span 1;
 }
 
 .gifBox:hover:nth-child(6n + 6) .titleGif {

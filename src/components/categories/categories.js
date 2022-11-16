@@ -1,15 +1,19 @@
-import Spinner from 'components/spinner/spinner';
-import { Suspense, lazy } from 'react';
+import { Suspense } from "react";
+import { Link } from "wouter";
 
-const ListCategories = lazy(() => import("./listCategories"))
-
-const Categories = () => {
+const Categories = ({ categories }) => {
   return (
     <div className="categoriesBox">
-      <Suspense fallback={<Spinner></Spinner>}>
-           <ListCategories></ListCategories>
+      <Suspense fallback={null}>
+        {categories.map((categorie) => (
+          <span className="categorie" key={categorie.name}>
+            <Link to={`/search/${categorie.name}`} className="categorieLink">
+              {categorie.name}
+            </Link>
+          </span>
+        ))}
       </Suspense>
     </div>
-  )
-}
-export default Categories
+  );
+};
+export default Categories;
