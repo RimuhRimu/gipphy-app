@@ -6,7 +6,7 @@ import useSingleGif from "hooks/useSingleGif";
 const SingleGif = ({ params }) => {
   const { id } = params;
   const { singleGif: gif, loadingGif } = useSingleGif({ id });
-  useSEO({ title: gif.title });
+  useSEO(loadingGif ? {title: "Cargando..."} : {title: gif.title,description:gif.title})
   return (
     <>
       {loadingGif ? (

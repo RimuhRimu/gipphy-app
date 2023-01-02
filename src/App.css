@@ -26,7 +26,6 @@ html {
 
 .wrapperLogoSearch {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -99,4 +98,10 @@ html {
 
 .categorie:hover:nth-child(6n + 6) .categorieLink {
   color: #000;
+}
+
+@media screen and (max-width: 450px) {
+  .wrapperLogoSearch {
+    flex-direction: column;
+  }
 }

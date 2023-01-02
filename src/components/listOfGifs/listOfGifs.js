@@ -7,9 +7,9 @@ import "components/spinner/spinner.css";
 import useSEO from "hooks/useSEO";
 
 const ListOfgifs = ({ params }) => {
-  const { keyword } = params;
+  const { keyword = "", rating = "g" } = params;
   useSEO({ title: keyword || "Gipphy App" });
-  const { loadingGifs, gifs, setPage } = useGifs({ keyword });
+  const { loadingGifs, gifs, setPage } = useGifs({ keyword,rating });
   return (
     <>
       {loadingGifs ? (

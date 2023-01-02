@@ -7,22 +7,44 @@
   --brand-color6: #a0f;
 }
 
+.gifBox {
+  position: relative;
+}
+
 .gif {
   height: 100%;
   margin: 0;
   position: relative;
 }
 
-.linkGif {
-  text-decoration: 0;
-  color: inherit;
-}
-
 .titleGif {
   color: #fff;
   position: absolute;
-  padding: 6px;
+  border-radius: 5px;
   background: rgba(0, 0, 0, 0.3);
+  min-height: 40px;
+}
+
+.titleGifBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  padding-left: 28px;
+}
+
+.linkGif {
+  text-decoration: 0;
+  color: inherit;
+  padding: 6px;
+}
+
+.copySVG {
+  position: absolute;
+  padding: 3px;
+  z-index: 99;
+  cursor: pointer;
+  transition: all 0.3s ease;
   border-radius: 5px;
 }
 
@@ -34,25 +56,26 @@
   cursor: pointer;
 }
 
-.gifBox:nth-child(11n + 1) {
-  grid-column: span 2;
-  grid-row: span 2;
+/* svg styles and click effects */
+
+.gifBox .copySVG:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.gifBox:nth-child(8n + 1) {
-  grid-column-end: span 2;
-  grid-row-end: span 2;
+.gifBox .copySVG:active {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.gifBox:nth-child(10n + 3) {
-  grid-column: span 2;
-  grid-row: span 1;
-}
+/**/
 
 .gifBox:hover:nth-child(6n + 6) .titleGif {
   background-color: var(--brand-color6);
   color: #000;
   border-radius: 0 0 5px 0;
+}
+
+.gifBox:hover:nth-child(6n + 6) .copySVG svg path {
+  stroke: #000;
 }
 
 .gifBox:hover:nth-child(6n + 5) .titleGif {
@@ -71,6 +94,10 @@
   border-radius: 0 0 5px 0;
 }
 
+.gifBox:hover:nth-child(6n + 3) .copySVG svg path {
+  stroke: #000;
+}
+
 .gifBox:hover:nth-child(6n + 2) .titleGif {
   background-color: var(--brand-color2);
   border-radius: 0 0 5px 0;
@@ -80,6 +107,10 @@
   background-color: var(--brand-color1);
   color: #000;
   border-radius: 0 0 5px 0;
+}
+
+.gifBox:hover:nth-child(6n + 1) .copySVG svg path {
+  stroke: #000;
 }
 
 .gifBox:hover:nth-child(6n + 6) {
@@ -110,4 +141,21 @@
 .gifBox:hover:nth-child(6n + 1) {
   box-shadow: 0 0 0 5px var(--brand-color1);
   border-radius: 5px;
+}
+
+@media screen and (min-width:550px) {
+  .gifBox:nth-child(11n + 1) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .gifBox:nth-child(8n + 1) {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+  }
+
+  .gifBox:nth-child(10n + 3) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
 }
