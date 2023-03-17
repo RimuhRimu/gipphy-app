@@ -1,0 +1,19 @@
+{
+  "imports": {
+    "oak": "https://deno.land/x/oak@v11.1.0/mod.ts",
+    "cors": "https://deno.land/x/cors@v1.2.2/mod.ts",
+    "jwt": "https://deno.land/x/djwt@v2.8/mod.ts",
+    "mongodb": "https://deno.land/x/mongo@v0.28.1/mod.ts"
+  },
+  "tasks": {
+    "dev": "deno run --watch --allow-read --allow-write --allow-net server.ts"
+  },
+  "fmt": {
+    "options": {
+      "useTabs": true,
+      "indentWidth": 2,
+      "singleQuote": true,
+      "semiColons": false
+    }
+  }
+}
