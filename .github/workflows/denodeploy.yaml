@@ -16,4 +16,4 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "gipphy-api"
-          entrypoint: "/api/server.ts"
+          entrypoint: "./api/server.ts"

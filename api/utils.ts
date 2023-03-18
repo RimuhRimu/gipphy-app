@@ -1,5 +1,5 @@
 import { ALGORITHM } from './const.ts'
-import 'dotenv'
+import 'https://deno.land/x/dotenv@v3.2.0/load.ts'
 
 export function jsonToKey(json: JsonWebKey) {
 	return crypto

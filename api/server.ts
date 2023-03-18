@@ -1,5 +1,5 @@
-import { Application, Router } from 'oak'
-import { oakCors } from 'cors'
+import { Application, Router } from './deps.ts'
+import { oakCors } from './deps.ts'
 
 import { deleteFav, getFavs, login, postFav, register } from './routes.ts'
 import { DEFAULT_PORT } from './const.ts'

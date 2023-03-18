@@ -1,5 +1,5 @@
-import { verify as verifyJwt } from 'jwt'
-import { type Context } from 'oak'
+import { verifyJWT } from '../deps.ts'
+import { type Context } from '../deps.ts'
 import { users } from '../db.ts'
 import { getEnv } from '../utils.ts'
 
@@ -18,7 +18,7 @@ const userMiddleware = async (ctx: Context, next: () => Promise<unknown>) => {
 	if (jwt) {
 		let isValid = true
 		// Validate JWT and if it is invalid delete from cookie
-		const data = await verifyJwt(jwt, key).catch((err: Error) => {
+		const data = await verifyJWT(jwt, key).catch((err: Error) => {
 			isValid = false
 			console.log('Error with JWT ', err)
 		})

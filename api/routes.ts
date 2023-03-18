@@ -1,5 +1,5 @@
-import { create as makeJWT } from 'https://deno.land/x/djwt@v2.8/mod.ts'
-import { type RouterContext } from 'oak'
+import { makeJWT } from './deps.ts'
+import { type RouterContext } from './deps.ts'
 
 import { HEADER } from './const.ts'
 import { users } from './db.ts'
