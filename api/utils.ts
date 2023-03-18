@@ -31,16 +31,16 @@ export async function getEnv() {
 		)
 
 		return {
-			username: username,
-			password: password,
+			username,
+			password,
 			key,
 		}
 	}
 
 	//else return the actual environment variables
 	return {
-		username: username,
-		password: password,
+		username,
+		password,
 		key: await crypto.subtle.importKey('jwk', key, ALGORITHM, true, [
 			'sign',
 			'verify',

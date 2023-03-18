@@ -12,8 +12,10 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
+      - name: build
+
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "gipphy-api"
-          entrypoint: "./api/server.ts"
+          entrypoint: "/api/server.ts"
