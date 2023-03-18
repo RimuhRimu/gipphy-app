@@ -1,4 +1,4 @@
-import { ALGORITHM, ENV } from './const.ts'
+import { ALGORITHM } from './const.ts'
 import 'dotenv'
 
 export function jsonToKey(json: JsonWebKey) {
