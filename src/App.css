@@ -1,5 +1,5 @@
 :root {
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica";
   color: #fef;
 }
 
@@ -25,6 +25,8 @@ html {
 }
 
 .wrapperLogoSearch {
+  gap: 10px;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +36,7 @@ html {
   margin-right: 15px;
   height: 60px;
   width: auto;
+  cursor: pointer;
 }
 
 .categoriesBox {
@@ -54,7 +57,7 @@ html {
   color: inherit;
 }
 
-.categorie:hover:nth-child(6n + 6) {
+.categorie:hover:nth-child(6n + 6), .categorie:focus:nth-child(6n + 6) {
   background: var(--brand-color6);
   border-radius: 5px;
 }
