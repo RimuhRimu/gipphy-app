@@ -18,4 +18,6 @@ $ yarn #to install dependencies
 $ yarn run start
 ```
 
+Here's a [live](https://gipphy-app.vercel.app/) demo
+
 > thanks to midudev, I followed his tutorial :) https://www.youtube.com/playlist?list=PLV8x_i1fqBw0B008sQn79YxCjkHJU84pC
