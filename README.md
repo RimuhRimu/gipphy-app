@@ -20,4 +20,6 @@ $ yarn run start
 
 Here's a [live](https://gipphy-app.vercel.app/) demo
 
+> I'm still working on some other features and the backend
+
 > thanks to midudev, I followed his tutorial :) https://www.youtube.com/playlist?list=PLV8x_i1fqBw0B008sQn79YxCjkHJU84pC
