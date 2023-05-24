@@ -1,4 +1,4 @@
-const URL = 'http://localhost:8080'
+const URL = process.env.REACT_APP_BACKEND_DIR
 export default async function registerService({ username, password }) {
   const res = await fetch(`${URL}/register`, {
     method: "POST",

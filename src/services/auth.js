@@ -1,4 +1,4 @@
-const URL = 'http://localhost:8080'
+const URL = process.env.REACT_APP_BACKEND_DIR
 export default async function auth({ localJWT }) {
   const res = await fetch(`${URL}/auth`, {
     method: "POST",
