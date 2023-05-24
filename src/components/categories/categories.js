@@ -1,8 +1,12 @@
 import { Suspense, useContext } from "react";
 import { Link } from "wouter";
+
 import {GlobalContext} from 'components/global/index'
 
-const Categories = ({ categories }) => {
+import useCategories from "hooks/useCategories";
+
+const Categories = () => {
+  const { categories } = useCategories();
   const {setGlobal,global} = useContext(GlobalContext)
   const { inputRef } = global
   const handleClick = (evt) => {

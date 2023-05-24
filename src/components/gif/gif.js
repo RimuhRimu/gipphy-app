@@ -1,19 +1,52 @@
 import { Link } from "wouter";
+import { Copy, Heart } from "iconoir-react"
+
+import useUser from "hooks/useUser";
+import { useContext, useEffect, useRef, useState } from "react";
+import { GlobalContext } from "components/global";
+
 import "./gif.css";
-const Gif = ({ url, name, id }) => {
+
+const Gif = ({ url, name, id, isFavInitial }) => {
+  const { favHandle } = useUser()
+  const { global } = useContext(GlobalContext)
+  const { isAuth } = global
+
+  const [isFav, setIsFav] = useState(isFavInitial)
+  const heartRef = useRef(null)
+
+  useEffect(() => {
+    if (!isAuth) {
+      setIsFav(false)
+    }
+    else {
+      setIsFav(isFavInitial)
+    }
+  }, [isAuth])
+
   return (
     <div className="gifBox">
-      <div className="copySVG" onClick={() => navigator.clipboard.writeText(url)}>
-        <svg 
-          width="25px" 
-          height="25px" 
-          viewBox="0 0 24 24" 
-          stroke-width="1.5" 
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg" 
-        >
-          <path d="M8.5 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path><path d="M8 6.4V4.5a.5.5 0 01.5-.5c.276 0 .504-.224.552-.496C9.2 2.652 9.774 1 12 1s2.8 1.652 2.948 2.504c.048.272.276.496.552.496a.5.5 0 01.5.5v1.9a.6.6 0 01-.6.6H8.6a.6.6 0 01-.6-.6z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path>
-        </svg>
+      <div className="SVG copy" onClick={() => navigator.clipboard.writeText(url)}>
+        <Copy />
+      </div>
+      <div className="SVG heart">
+        <button onClick={() => {
+          if (isFav) {
+            favHandle({ operation: "del", fav: id })
+              .then(_ => setIsFav(false))
+          }
+          else {
+            favHandle({ operation: "add", fav: id })
+              .then(_ => setIsFav(true))
+          }
+        }} style={{
+          background: "none",
+          border: "none"
+        }}>
+          {
+            isFav ? <Heart ref={heartRef} fill="#f0f" color="#f00" /> : <Heart ref={heartRef} color="#fff" />
+          }
+        </button>
       </div>
       <figure className="gif">
         <figcaption className="titleGif">

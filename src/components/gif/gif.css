@@ -23,14 +23,15 @@
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.3);
   min-height: 40px;
+  width: 100%;
 }
 
 .titleGifBox {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   border-radius: 5px;
-  padding-left: 28px;
+  padding-left: 58px;
 }
 
 .linkGif {
@@ -39,13 +40,17 @@
   padding: 6px;
 }
 
-.copySVG {
+.SVG {
   position: absolute;
   padding: 3px;
-  z-index: 99;
+  z-index: 2;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 5px;
+}
+
+.heart {
+  margin-left: 30px;
 }
 
 .gifPicture {
@@ -58,11 +63,11 @@
 
 /* svg styles and click effects */
 
-.gifBox .copySVG:hover {
+.gifBox .SVG:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.gifBox .copySVG:active {
+.gifBox .SVG:active {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -74,7 +79,7 @@
   border-radius: 0 0 5px 0;
 }
 
-.gifBox:hover:nth-child(6n + 6) .copySVG svg path {
+.gifBox:hover:nth-child(6n + 6) .SVG svg path {
   stroke: #000;
 }
 
@@ -94,7 +99,7 @@
   border-radius: 0 0 5px 0;
 }
 
-.gifBox:hover:nth-child(6n + 3) .copySVG svg path {
+.gifBox:hover:nth-child(6n + 3) .SVG svg path {
   stroke: #000;
 }
 
@@ -109,7 +114,7 @@
   border-radius: 0 0 5px 0;
 }
 
-.gifBox:hover:nth-child(6n + 1) .copySVG svg path {
+.gifBox:hover:nth-child(6n + 1) .SVG svg path {
   stroke: #000;
 }
 

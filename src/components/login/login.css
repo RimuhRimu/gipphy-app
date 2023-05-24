@@ -1,0 +1,128 @@
+.loginHeader {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  height: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 10px;
+}
+
+.loginButton {
+  height: 25px;
+  border: 0;
+  border-radius: 10%;
+  font-weight: 200;
+  font-family: 'Helvetica';
+  background-color: var(--brand-color6);
+  color: #fff;
+}
+
+.loginFormBackground {
+  position: absolute;
+  background: #000000aa;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.loginForm {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 99;
+}
+
+.formField {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.formField fieldset {
+  color: #000;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0;
+}
+
+.formField fieldset legend {
+  display: inline-block;
+  width: 100%;
+  margin-top: 5px;
+  height: 20px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 0;
+  left: 85%;
+}
+
+.closeIcon svg {
+  color: orange;
+}
+
+.formField fieldset p {
+  display: flex;
+  flex-direction: column;
+}
+
+.formField fieldset strong {
+  position: absolute;
+  top: 88%;
+  left: 10px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.formField fieldset p input {
+  height: 25px;
+  padding-left: 8px;
+  border: 0;
+  border-radius: 5px;
+  background: #eee;
+}
+
+.formField fieldset p input:focus {
+  outline: none;
+}
+
+.formField fieldset p label{
+  display: flex;
+  flex-direction: column;
+}
+
+.formField fieldset p label b {
+  display: inline-block;
+  color: #fff;
+}
+
+.formField fieldset p label b {
+  margin-left: 8px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px 5px 0 0;
+  background: var(--brand-color6);
+  display: inline-block;
+}
+.formField fieldset button {
+  font-family: inherit;
+  font-weight: 900;
+  color: #fff;
+  background: var(--brand-color6);
+  border: 0;
+  border-radius: 5px;
+  width: 50px;
+}
