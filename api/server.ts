@@ -16,7 +16,9 @@ router
   .post('/favs/:id', userMiddleware, postFav)
   .post('/register', register)
 
-app.use(router.routes())
+app.use((ctx) => {
+  ctx.response.body = 'Hello World from Oak!'
+})
 app.use(router.allowedMethods())
 
 app.addEventListener('error', (evt) => console.log(evt.error))
