@@ -19,7 +19,6 @@ router
 app.use((ctx) => {
   ctx.response.body = 'Hello World from Oak!'
 })
-app.use(router.allowedMethods())
 
 app.addEventListener('error', (evt) => console.log(evt.error))
 
