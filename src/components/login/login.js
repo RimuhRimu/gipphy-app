@@ -36,13 +36,13 @@ const LoginForm = () => {
                         <b>Password</b>
                         <input type="password" name="password" id="password" placeholder="password" ref={passwordRef} />
                       </label>
-                      {loading && <strong>Loading...</strong>}
+                      {loading ? <strong>Loading...</strong> : null}
                     </p>
                     <button onClick={(ev) => {
                       ev.preventDefault()
                       login({ username: usernameRef.current.value, password: passwordRef.current.value })
                     }} >Login</button>
-                    {error && <strong>Error in credentials</strong>}
+                    {error ? <strong>Error in credentials</strong> : null}
                   </fieldset>
                 </form>
               </div>
